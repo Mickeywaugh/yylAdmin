@@ -3,42 +3,15 @@
  * @Description  : 实用工具
  * @Author       : https://github.com/skyselang
  * @Date         : 2020-05-05
- * @LastEditTime : 2020-09-11
+ * @LastEditTime : 2020-09-29
  */
 
 namespace app\admin\service;
 
-use think\facade\Cache;
 use Endroid\QrCode\QrCode;
 
 class AdminToolService
 {
-    /**
-     * 字符串转换
-     *
-     * @param string $str 字符串
-     *
-     * @return array
-     */
-    public static function strTran($str)
-    {
-        $rev = '';
-        $len = mb_strlen($str, 'utf-8');
-
-        for ($i = $len - 1; $i >= 0; $i--) {
-            $rev = $rev . mb_substr($str, $i, 1, 'utf-8');
-        }
-
-        $data['str']   = $str;
-        $data['len']   = $len;
-        $data['lower'] = strtolower($str);
-        $data['upper'] = strtoupper($str);
-        $data['rev']   = $rev;
-        $data['md5']   = md5($str);
-
-        return $data;
-    }
-
     /**
      * 随机字符串
      *
@@ -71,6 +44,36 @@ class AdminToolService
         $data['ori'] = $ori;
         $data['len'] = $len;
         $data['str'] = $str;
+
+        return $data;
+    }
+
+    /**
+     * 字符串转换
+     *
+     * @param string $str 字符串
+     *
+     * @return array
+     */
+    public static function strTran($str)
+    {
+        if (empty($str)) {
+            $str = 'yylAdmin';
+        }
+
+        $rev = '';
+        $len = mb_strlen($str, 'utf-8');
+
+        for ($i = $len - 1; $i >= 0; $i--) {
+            $rev = $rev . mb_substr($str, $i, 1, 'utf-8');
+        }
+
+        $data['str']   = $str;
+        $data['len']   = $len;
+        $data['lower'] = strtolower($str);
+        $data['upper'] = strtoupper($str);
+        $data['rev']   = $rev;
+        $data['md5']   = md5($str);
 
         return $data;
     }
@@ -110,6 +113,10 @@ class AdminToolService
      */
     public static function qrcode($str)
     {
+        if (empty($str)) {
+            $str = 'https://gitee.com/skyselang/yylAdmin';
+        }
+
         $admin_user_id = admin_user_id();
 
         $file_dir = '/storage/admin/user/' . $admin_user_id;
@@ -124,6 +131,7 @@ class AdminToolService
 
         $qrcode_url = file_url($file_path);
 
+        $data['str'] = $str;
         $data['url'] = $qrcode_url . '?r=' . mt_rand(10, 99);
 
         return $data;

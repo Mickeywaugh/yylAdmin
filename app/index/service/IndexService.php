@@ -1,14 +1,14 @@
 <?php
 /*
- * @Description  : 控制台
+ * @Description  : 首页
  * @Author       : https://github.com/skyselang
  * @Date         : 2020-05-17
  * @LastEditTime : 2020-09-30
  */
 
-namespace app\admin\service;
+namespace app\index\service;
 
-class AdminIndexService
+class IndexService
 {
     /**
      * 首页

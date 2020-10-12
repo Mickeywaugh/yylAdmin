@@ -1,8 +1,13 @@
-# # https://git-scm.com/book/zh/v2
+# https://git-scm.com/book/zh/v2
 /.idea
 /.vscode
 /public/.well-known
 /public/storage
 /vendor
 *.log
+<<<<<<< HEAD
 .env
+=======
+.env
+.user.ini
+>>>>>>> master
