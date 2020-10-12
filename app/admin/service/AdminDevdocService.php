@@ -3,13 +3,13 @@
  * @Description  : 开发文档
  * @Author       : https://github.com/skyselang
  * @Date         : 2020-09-18
- * @LastEditTime : 2020-09-18
+ * @LastEditTime : 2020-10-12
  */
 
 namespace app\admin\service;
 
 use think\facade\Db;
-use app\cache\AdminDevdocCache;
+use app\common\cache\AdminDevdocCache;
 
 class AdminDevdocService
 {

@@ -3,10 +3,10 @@
  * @Description  : 地区缓存
  * @Author       : https://github.com/skyselang
  * @Date         : 2020-09-22
- * @LastEditTime : 2020-09-22
+ * @LastEditTime : 2020-10-12
  */
 
-namespace app\cache;
+namespace app\common\cache;
 
 use think\facade\Cache;
 

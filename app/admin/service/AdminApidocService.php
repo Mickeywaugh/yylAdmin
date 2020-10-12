@@ -3,13 +3,13 @@
  * @Description  : 接口文档
  * @Author       : https://github.com/skyselang
  * @Date         : 2020-09-17
- * @LastEditTime : 2020-09-18
+ * @LastEditTime : 2020-10-12
  */
 
 namespace app\admin\service;
 
 use think\facade\Db;
-use app\cache\AdminApidocCache;
+use app\common\cache\AdminApidocCache;
 
 class AdminApidocService
 {

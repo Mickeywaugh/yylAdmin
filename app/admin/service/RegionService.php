@@ -3,13 +3,13 @@
  * @Description  : 地区管理
  * @Author       : https://github.com/skyselang
  * @Date         : 2020-09-22
- * @LastEditTime : 2020-09-26
+ * @LastEditTime : 2020-10-12
  */
 
 namespace app\admin\service;
 
 use think\facade\Db;
-use app\cache\RegionCache;
+use app\common\cache\RegionCache;
 use Overtrue\Pinyin\Pinyin;
 
 class RegionService
